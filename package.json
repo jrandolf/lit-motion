@@ -1,0 +1,36 @@
+{
+  "name": "lit-motion",
+  "version": "0.0.0",
+  "description": "A Lit motion library",
+  "type": "module",
+  "packageManager": "pnpm@8.15.4",
+  "scripts": {
+    "build": "tsc -p ."
+  },
+  "keywords": [
+    "node",
+    "lit",
+    "motion",
+    "animation",
+    "animate"
+  ],
+  "author": "Randolf J.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrandolf/lit-motion"
+  },
+  "files": [
+    "*.d.*",
+    "*.js.map",
+    "*.js"
+  ],
+  "dependencies": {
+    "lit": "^3.1.2",
+    "motion": "^10.17.0"
+  },
+  "devDependencies": {
+    "prettier": "3.2.5",
+    "typescript": "5.4.4"
+  }
+}
