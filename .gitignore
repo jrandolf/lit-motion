@@ -1,0 +1,7 @@
+*.js.*
+*.js
+*.d.*
+node_modules
+*.tsbuildinfo
+
+!prettier.config.js

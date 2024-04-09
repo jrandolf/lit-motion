@@ -1,0 +1,31 @@
+load("@aspect_rules_js//npm:defs.bzl", "npm_package")
+load("@aspect_rules_ts//ts:defs.bzl", "ts_config")
+load("@npm//:defs.bzl", "npm_link_all_packages")
+load("//tools/bazel/ts:defs.bzl", "ts_library")
+
+npm_link_all_packages(name = "node_modules")
+
+npm_package(
+    name = "lit-motion",
+    srcs = [
+        "package.json",
+        ":lit-motion_ts",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+ts_library(
+    name = "lit-motion_ts",
+    srcs = glob(["**/*.ts"]) + ["package.json"],
+    tsconfig = ":tsconfig",
+    deps = [
+        ":node_modules/lit",
+        ":node_modules/motion",
+    ],
+)
+
+ts_config(
+    name = "tsconfig",
+    src = "tsconfig.json",
+    visibility = [":__subpackages__"],
+)
