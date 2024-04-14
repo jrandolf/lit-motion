@@ -8,6 +8,7 @@
   "bump-patch-for-minor-pre-major": true,
   "packages": {
     ".": {
+      "release-as": "0.5.0",
       "component": "lit-motion",
       "include-component-in-tag": false
     }
