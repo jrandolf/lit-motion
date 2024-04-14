@@ -3,7 +3,7 @@
   "version": "0.5.0",
   "description": "A Lit motion library",
   "type": "module",
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@8.15.7",
   "scripts": {
     "build": "tsc -p ."
   },
@@ -31,6 +31,6 @@
   },
   "devDependencies": {
     "prettier": "3.2.5",
-    "typescript": "5.4.4"
+    "typescript": "5.4.5"
   }
 }
