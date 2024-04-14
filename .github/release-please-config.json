@@ -3,7 +3,6 @@
   "pull-request-title-pattern": "chore: release${component} ${version}",
   "pull-request-header": "Here is a summary of this release.",
   "release-type": "node",
-  "include-component-in-tag": false,
   "bump-minor-pre-major": true,
   "bump-patch-for-minor-pre-major": true,
   "packages": {
