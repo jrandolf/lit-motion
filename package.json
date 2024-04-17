@@ -3,7 +3,7 @@
   "version": "0.5.0",
   "description": "A Lit motion library",
   "type": "module",
-  "packageManager": "pnpm@8.15.7",
+  "packageManager": "pnpm@9.0.2",
   "scripts": {
     "build": "tsc -p ."
   },
