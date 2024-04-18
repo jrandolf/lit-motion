@@ -58,9 +58,6 @@ class Animate extends AsyncDirective {
 
   #controls?: AnimationControls;
 
-  #finish?: (this: Animate) => Promise<void>;
-  #finishPromise: Promise<void> | false = false;
-
   constructor(partInfo: PartInfo) {
     super(partInfo);
     if (partInfo.type !== PartType.ELEMENT) {
@@ -99,6 +96,7 @@ class Animate extends AsyncDirective {
       }
       ({keyframes} = variant);
       this.#variant = parameters.keyframes;
+
       /* eslint-disable-next-line no-param-reassign -- Downstream users shouldn't need to
          original. */
       options = {...variant.options, ...options};
@@ -112,26 +110,24 @@ class Animate extends AsyncDirective {
       ({keyframes} = parameters);
     }
 
+    const finishHandlers: (() => void)[] = [];
+    measure(part, keyframes, finishHandlers);
+
     const controls = motionAnimate(part.element, keyframes, options);
-    if (
-      typeof options !== "undefined" &&
-      typeof options.finished === "function"
-    ) {
+    if (typeof options?.finished === "function") {
       const {finished} = options;
-
-      /* eslint-disable-next-line no-inner-declarations -- Uses inner variable. */
-      this.#finish = async function finish(this: Animate) {
-        await controls.finished;
+      finishHandlers.push(() => {
         finished();
-        this.#finishPromise = false;
-      };
-
-      // In case the animation is not running because autoplay was turned off.
-      if (controls.playState !== "idle") {
-        this.#finishPromise = this.#finish.apply(this);
-      }
+      });
     }
     this.#controls = controls;
+
+    void (async () => {
+      await controls.finished;
+      for (const handler of finishHandlers) {
+        handler();
+      }
+    })();
 
     return noChange;
   }
@@ -159,9 +155,6 @@ class Animate extends AsyncDirective {
       return;
     }
     this.#controls.play();
-    if (typeof this.#finish === "function" && this.#finishPromise === false) {
-      this.#finishPromise = this.#finish.apply(this);
-    }
   }
 }
 
@@ -172,9 +165,10 @@ class Animate extends AsyncDirective {
  * frames or set the initial state in the element's style attribute. The former takes
  * precedence over the latter.
  *
- * For the best experience, it is recommended to use two key frames to set the initial
- * state. This isolates the animation from the element's current state and ensures the
- * animation is consistent.
+ * Do not use `styleMap` to set the initial state as `styleMap` will disrupt the
+ * animation.
+ *
+ * For the best experience, set the initial state in the element's style attribute.
  *
  * @example In this example, the element will animate from an opacity of `0` to `1`. Note
  * the initial state is deduced from the element's current state.
@@ -185,21 +179,6 @@ class Animate extends AsyncDirective {
  * import animate from "lit-motion";
  *
  * html`<div style="opacity:0" ${animate({opacity: 1})}></div>`;
- * ```
- *
- * @example In this example, the element will animate from an opacity of `0` to `1` after
- * 1 second. Similar to the previous example, the initial state is deduced from the
- * element's current state.
- *
- * ```ts
- * import {html, styleMap} from "lit";
- *
- * import animate from "lit-motion";
- *
- * html`<div
- *   style=${styleMap({opacity: 0})}
- *   ${animate({opacity: 1}, {delay: 1})}
- * ></div>`;
  * ```
  *
  * @example In this example, the element will animate from an opacity of `0` to `1` after
@@ -226,3 +205,46 @@ const animate = directive(Animate) as <
   parameters: AnimateParameters<Variant, Context>,
 ) => DirectiveResult<typeof Animate>;
 export default animate;
+
+function measure(
+  part: ElementPart,
+  keyframes: MotionKeyframesDefinition,
+  finishHandlers: (() => void)[],
+) {
+  /* eslint-disable-next-line no-restricted-syntax -- When is this never an HTMLElement? */
+  const element = part.element as HTMLElement;
+  for (const attribute of ["width", "height"] as const) {
+    if (!(attribute in keyframes)) {
+      continue;
+    }
+    // If the element is auto, replace with a concrete value.
+    if (element.style[attribute] === "auto") {
+      const autoStyles = window.getComputedStyle(element);
+      element.style[attribute] = autoStyles[attribute];
+    }
+
+    // XXX: Technically, other attributes in the keyframe may affect the element's size.
+    // However, this is a good enough approximation for now.
+    const keyframe = keyframes[attribute];
+    if (Array.isArray(keyframe)) {
+      const lastKeyframe = keyframe[keyframe.length - 1];
+      if (lastKeyframe !== "auto") {
+        return;
+      }
+      keyframe[keyframe.length - 1] = getMeasuredValue(attribute, lastKeyframe);
+    } else if (keyframe === "auto") {
+      keyframes[attribute] = getMeasuredValue(attribute, keyframe);
+    }
+  }
+
+  function getMeasuredValue(attribute: "height" | "width", keyframe: string) {
+    const original = element.style[attribute];
+    element.style[attribute] = keyframe;
+    const value = window.getComputedStyle(element)[attribute];
+    element.style[attribute] = original;
+    finishHandlers.push(() => {
+      element.style[attribute] = keyframe;
+    });
+    return value;
+  }
+}
