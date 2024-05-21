@@ -213,7 +213,14 @@ function measure(
 ) {
   /* eslint-disable-next-line no-restricted-syntax -- When is this never an HTMLElement? */
   const element = part.element as HTMLElement;
-  for (const attribute of ["width", "height"] as const) {
+  for (const attribute of [
+    "width",
+    "height",
+    "top",
+    "left",
+    "right",
+    "bottom",
+  ] as const) {
     if (!(attribute in keyframes)) {
       continue;
     }
@@ -237,7 +244,10 @@ function measure(
     }
   }
 
-  function getMeasuredValue(attribute: "height" | "width", keyframe: string) {
+  function getMeasuredValue(
+    attribute: "bottom" | "height" | "left" | "right" | "top" | "width",
+    keyframe: string,
+  ) {
     const original = element.style[attribute];
     element.style[attribute] = keyframe;
     const value = window.getComputedStyle(element)[attribute];
