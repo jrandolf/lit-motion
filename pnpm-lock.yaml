@@ -10,14 +10,14 @@ importers:
     dependencies:
       lit:
         specifier: ^3.1.2
-        version: 3.1.3
+        version: 3.1.4
       motion:
         specifier: ^10.17.0
-        version: 10.17.1
+        version: 10.18.0
     devDependencies:
       prettier:
-        specifier: 3.2.5
-        version: 3.2.5
+        specifier: 3.3.2
+        version: 3.3.2
       typescript:
         specifier: 5.4.5
         version: 5.4.5
@@ -30,23 +30,23 @@ packages:
   '@lit/reactive-element@2.0.4':
     resolution: {integrity: sha512-GFn91inaUa2oHLak8awSIigYz0cU0Payr1rcFsrkf5OJ5eSPxElyZfKh0f2p9FsTiZWXQdWGJeXZICEfXXYSXQ==}
 
-  '@motionone/animation@10.17.1':
-    resolution: {integrity: sha512-Zi/DmtqDpVt4V4ybe8c2nVlU8q75AjZXx2ynDZ80UJZYZbNrRWaTqNKkzE5sPaufXF6fS9S7Q8VAhec8hiOk8w==}
+  '@motionone/animation@10.18.0':
+    resolution: {integrity: sha512-9z2p5GFGCm0gBsZbi8rVMOAJCtw1WqBTIPw3ozk06gDvZInBPIsQcHgYogEJ4yuHJ+akuW8g1SEIOpTOvYs8hw==}
 
-  '@motionone/dom@10.17.1':
-    resolution: {integrity: sha512-B+YlVcKG9TO8A4bKfxBxHPd7+C0gYOLBkGPkeqtQ684/Nb7256OKfBbCtc8D04cKmv1ZcoHFrtnRkinxQHnJUg==}
+  '@motionone/dom@10.18.0':
+    resolution: {integrity: sha512-bKLP7E0eyO4B2UaHBBN55tnppwRnaE3KFfh3Ps9HhnAkar3Cb69kUCJY9as8LrccVYKgHA+JY5dOQqJLOPhF5A==}
 
-  '@motionone/easing@10.17.1':
-    resolution: {integrity: sha512-9CkCl0xi3YIzf0WyYU4sgQT6S+jIpo7+O13FdF+vE+aTFumOe+8RIC7q3/nsNU5z+VHA1VFZUWtJUVMr1fRF2A==}
+  '@motionone/easing@10.18.0':
+    resolution: {integrity: sha512-VcjByo7XpdLS4o9T8t99JtgxkdMcNWD3yHU/n6CLEz3bkmKDRZyYQ/wmSf6daum8ZXqfUAgFeCZSpJZIMxaCzg==}
 
-  '@motionone/generators@10.17.1':
-    resolution: {integrity: sha512-z8W5dXcW5fB9AkD+aaF2m2cL6yFLx6UcJj1ld+DZguJ7jX56Ue9eKJJ8wWdA/dP0lzDjKwjivGoIroefxTSigg==}
+  '@motionone/generators@10.18.0':
+    resolution: {integrity: sha512-+qfkC2DtkDj4tHPu+AFKVfR/C30O1vYdvsGYaR13W/1cczPrrcjdvYCj0VLFuRMN+lP1xvpNZHCRNM4fBzn1jg==}
 
   '@motionone/types@10.17.1':
     resolution: {integrity: sha512-KaC4kgiODDz8hswCrS0btrVrzyU2CSQKO7Ps90ibBVSQmjkrt2teqta6/sOG59v7+dPnKMAg13jyqtMKV2yJ7A==}
 
-  '@motionone/utils@10.17.1':
-    resolution: {integrity: sha512-zXZpXnIiTe4wRWlI5xMbgbTsA/55n8ELI35WdN4XwUw5Bbq8PLQF/F8to8nUt8H5eV6ybm60N37FrEl684lSFA==}
+  '@motionone/utils@10.18.0':
+    resolution: {integrity: sha512-3XVF7sgyTSI2KWvTf6uLlBJ5iAgRgmvp3bpuOiQJvInd4nZ19ET8lX5unn30SlmRH7hXbBbH+Gxd0m0klJ3Xtw==}
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
@@ -54,25 +54,25 @@ packages:
   hey-listen@1.0.8:
     resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
 
-  lit-element@4.0.5:
-    resolution: {integrity: sha512-iTWskWZEtn9SyEf4aBG6rKT8GABZMrTWop1+jopsEOgEcugcXJGKuX5bEbkq9qfzY+XB4MAgCaSPwnNpdsNQ3Q==}
+  lit-element@4.0.6:
+    resolution: {integrity: sha512-U4sdJ3CSQip7sLGZ/uJskO5hGiqtlpxndsLr6mt3IQIjheg93UKYeGQjWMRql1s/cXNOaRrCzC2FQwjIwSUqkg==}
 
-  lit-html@3.1.3:
-    resolution: {integrity: sha512-FwIbqDD8O/8lM4vUZ4KvQZjPPNx7V1VhT7vmRB8RBAO0AU6wuTVdoXiu2CivVjEGdugvcbPNBLtPE1y0ifplHA==}
+  lit-html@3.1.4:
+    resolution: {integrity: sha512-yKKO2uVv7zYFHlWMfZmqc+4hkmSbFp8jgjdZY9vvR9jr4J8fH6FUMXhr+ljfELgmjpvlF7Z1SJ5n5/Jeqtc9YA==}
 
-  lit@3.1.3:
-    resolution: {integrity: sha512-l4slfspEsnCcHVRTvaP7YnkTZEZggNFywLEIhQaGhYDczG+tu/vlgm/KaWIEjIp+ZyV20r2JnZctMb8LeLCG7Q==}
+  lit@3.1.4:
+    resolution: {integrity: sha512-q6qKnKXHy2g1kjBaNfcoLlgbI3+aSOZ9Q4tiGa9bGYXq5RBXxkVTqTIVmP2VWMp29L4GyvCFm8ZQ2o56eUAMyA==}
 
-  motion@10.17.1:
-    resolution: {integrity: sha512-ap2uQ8+yGIkT8ad+Mvx08+yRaLO/T1bvMC0x7R1DZV2/q6yXXR/xfpl6YDFTKFXeaeQ2Hl/vW6u4KN5Sdbu+rA==}
+  motion@10.18.0:
+    resolution: {integrity: sha512-MVAZZmwM/cp77BrNe1TxTMldxRPjwBNHheU5aPToqT4rJdZxLiADk58H+a0al5jKLxkB0OdgNq6DiVn11cjvIQ==}
 
-  prettier@3.2.5:
-    resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
+  prettier@3.3.2:
+    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
     engines: {node: '>=14'}
     hasBin: true
 
-  tslib@2.6.2:
-    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+  tslib@2.6.3:
+    resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
   typescript@5.4.5:
     resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
@@ -87,70 +87,70 @@ snapshots:
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.2.0
 
-  '@motionone/animation@10.17.1':
+  '@motionone/animation@10.18.0':
     dependencies:
-      '@motionone/easing': 10.17.1
+      '@motionone/easing': 10.18.0
       '@motionone/types': 10.17.1
-      '@motionone/utils': 10.17.1
-      tslib: 2.6.2
+      '@motionone/utils': 10.18.0
+      tslib: 2.6.3
 
-  '@motionone/dom@10.17.1':
+  '@motionone/dom@10.18.0':
     dependencies:
-      '@motionone/animation': 10.17.1
-      '@motionone/generators': 10.17.1
+      '@motionone/animation': 10.18.0
+      '@motionone/generators': 10.18.0
       '@motionone/types': 10.17.1
-      '@motionone/utils': 10.17.1
+      '@motionone/utils': 10.18.0
       hey-listen: 1.0.8
-      tslib: 2.6.2
+      tslib: 2.6.3
 
-  '@motionone/easing@10.17.1':
+  '@motionone/easing@10.18.0':
     dependencies:
-      '@motionone/utils': 10.17.1
-      tslib: 2.6.2
+      '@motionone/utils': 10.18.0
+      tslib: 2.6.3
 
-  '@motionone/generators@10.17.1':
+  '@motionone/generators@10.18.0':
     dependencies:
       '@motionone/types': 10.17.1
-      '@motionone/utils': 10.17.1
-      tslib: 2.6.2
+      '@motionone/utils': 10.18.0
+      tslib: 2.6.3
 
   '@motionone/types@10.17.1': {}
 
-  '@motionone/utils@10.17.1':
+  '@motionone/utils@10.18.0':
     dependencies:
       '@motionone/types': 10.17.1
       hey-listen: 1.0.8
-      tslib: 2.6.2
+      tslib: 2.6.3
 
   '@types/trusted-types@2.0.7': {}
 
   hey-listen@1.0.8: {}
 
-  lit-element@4.0.5:
+  lit-element@4.0.6:
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.2.0
       '@lit/reactive-element': 2.0.4
-      lit-html: 3.1.3
+      lit-html: 3.1.4
 
-  lit-html@3.1.3:
+  lit-html@3.1.4:
     dependencies:
       '@types/trusted-types': 2.0.7
 
-  lit@3.1.3:
+  lit@3.1.4:
     dependencies:
       '@lit/reactive-element': 2.0.4
-      lit-element: 4.0.5
-      lit-html: 3.1.3
+      lit-element: 4.0.6
+      lit-html: 3.1.4
 
-  motion@10.17.1:
+  motion@10.18.0:
     dependencies:
-      '@motionone/animation': 10.17.1
-      '@motionone/dom': 10.17.1
+      '@motionone/animation': 10.18.0
+      '@motionone/dom': 10.18.0
       '@motionone/types': 10.17.1
-      '@motionone/utils': 10.17.1
+      '@motionone/utils': 10.18.0
 
-  prettier@3.2.5: {}
+  prettier@3.3.2: {}
 
-  tslib@2.6.2: {}
+  tslib@2.6.3: {}
 
   typescript@5.4.5: {}
