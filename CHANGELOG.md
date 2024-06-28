@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.5.2](https://github.com/jrandolf/lit-motion/compare/v0.5.1...v0.5.2) (2024-06-28)
+
+
+### Features
+
+* add position attributes ([4d0cc09](https://github.com/jrandolf/lit-motion/commit/4d0cc098304fba9db212c656ee810c6a62871682))
+
+
+### Bug Fixes
+
+* **deps:** update npm ([#19](https://github.com/jrandolf/lit-motion/issues/19)) ([88e2b6c](https://github.com/jrandolf/lit-motion/commit/88e2b6c759db63e9fbb4eaef5141418cb8b63dd0))
+* **deps:** update npm ([#23](https://github.com/jrandolf/lit-motion/issues/23)) ([ea912b7](https://github.com/jrandolf/lit-motion/commit/ea912b747715333e1ee1b0494d570bb31faa5ffc))
+
 ## [0.5.1](https://github.com/jrandolf/lit-motion/compare/v0.5.0...v0.5.1) (2024-04-18)
 
 

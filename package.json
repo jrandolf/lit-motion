@@ -1,6 +1,6 @@
 {
   "name": "lit-motion",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "A Lit motion library",
   "type": "module",
   "packageManager": "pnpm@9.3.0",
